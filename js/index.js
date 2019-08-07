@@ -23,15 +23,15 @@ buttonFunBus.addEventListener('mouseleave', (event) => {
 // Create funBusHeader to have blur animation appear and disapper on fun bus in the sand image on click and dbl click with
 //event listener and utilizing Greensock
 const funBusHeader = document.querySelector('.funBusHeader');
-funBusHeader.addEventListener('mouseenter', (e) => {
-	TweenMax.to(e.target, 1, {
+funBusHeader.addEventListener('mouseenter', (event) => {
+	TweenMax.to(event.target, 1, {
 		scale: 0.8,
 		filter: 'none',
 		ease: Elastic.easeOut.config(1, 0.55)
 	});
 });
-funBusHeader.addEventListener('mouseout', (e) => {
-	TweenMax.to(e.target, 0.5, {
+funBusHeader.addEventListener('mouseout', (event) => {
+	TweenMax.to(event.target, 0.5, {
 		scale: 1,
 		filter: 'grayscale(1) blur(.01px)',
 		ease: Power1.easeIn
@@ -42,8 +42,8 @@ funBusHeader.addEventListener('mouseout', (e) => {
 
 const scaryText = document.querySelector('.text-content');
 
-scaryText.addEventListener('mouseleave', (e) => {
-	TweenMax.to(e.target, 2, {
+scaryText.addEventListener('mouseleave', (event) => {
+	TweenMax.to(event.target, 2, {
 		opacity: 0,
 		ease: RoughEase.ease.config({ strength: 3, points: 20, randomize: true }),
 		repeat: -1,
@@ -51,12 +51,27 @@ scaryText.addEventListener('mouseleave', (e) => {
 	});
 });
 
+const spookyPhoto = document.querySelector('.scaryImage');
+
+spookyPhoto.addEventListener('click', (event) => {
+	TweenMax.to(event.target, 2, {
+		opacity: 0.5,
+		ease: RoughEase.ease.config({ strength: 3, points: 1, randomize: false }),
+		repeat: -1,
+		yoyo: true
+	});
+});
+
+spookyPhoto.addEventListener('mouseout', (event) => {
+	spookyPhoto.src = 'img/spooky-woods.jpg';
+});
+
 //Sign Me Up Buttons Near Footer to Choose Destinations
 const signMeUpBtn = document.querySelectorAll('.content-pick .btn');
 
 signMeUpBtn.forEach((SignUp) => {
-	SignUp.addEventListener('click', (e) => {
-		TweenMax.to(e.target, 0.5, {
+	SignUp.addEventListener('click', (event) => {
+		TweenMax.to(event.target, 0.5, {
 			ease: SteppedEase.config(20),
 			y: -10
 		});
@@ -64,8 +79,8 @@ signMeUpBtn.forEach((SignUp) => {
 });
 
 signMeUpBtn.forEach((SignUp) => {
-	SignUp.addEventListener('mouseout', (e) => {
-		TweenMax.to(e.target, 2.5, {
+	SignUp.addEventListener('mouseout', (event) => {
+		TweenMax.to(event.target, 2.5, {
 			ease: RoughEase.ease.config({
 				template: Power0.easeNone,
 				strength: 1,
