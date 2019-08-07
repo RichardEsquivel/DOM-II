@@ -1,8 +1,15 @@
 //****Nav Bar***
 
-// Logo-Heading animation to increase font size with mouseover event listener and then revert
-//back to normal state with mouse leave
+//This action will prevent the nav bar from reloading the page as is its default property
 
+const navBarPrevent = document.querySelectorAll('.nav .nav-link');
+
+navBarPrevent.forEach((reloadNo) => {
+	reloadNo.addEventListener('click', (event) => {
+		event.preventDefault(event);
+	});
+});
+//This will cause the background of the body of the page to turn dark red once left button is clicked
 const darkStyle = document.querySelector('body');
 
 darkStyle.addEventListener('contextmenu', (event) => {
@@ -10,6 +17,8 @@ darkStyle.addEventListener('contextmenu', (event) => {
 	darkStyle.style.transitionDuration = '2s';
 });
 
+// Logo-Heading animation to increase font size with mouseover event listener and then revert
+//back to normal state with mouse leave
 const buttonFunBus = document.querySelector('.logo-heading');
 
 buttonFunBus.addEventListener('mouseover', (event) => {
@@ -48,6 +57,7 @@ funBusHeader.addEventListener('mouseout', (event) => {
 
 //***Body***
 
+//Text that will flash and eventually disappear next to photo
 const scaryText = document.querySelector('.text-content');
 
 scaryText.addEventListener('mouseleave', (event) => {
@@ -59,6 +69,7 @@ scaryText.addEventListener('mouseleave', (event) => {
 	});
 });
 
+//SpookyPhoto that flashes and pulses when you click on it and then when you mouse out in changes to another image
 const spookyPhoto = document.querySelector('.scaryImage');
 
 spookyPhoto.addEventListener('click', (event) => {
@@ -69,24 +80,34 @@ spookyPhoto.addEventListener('click', (event) => {
 		yoyo: true
 	});
 });
-
+// SpookyPhoto changing to another image with mouseout
 spookyPhoto.addEventListener('mouseout', (event) => {
 	spookyPhoto.src = 'img/spooky-woods.jpg';
 });
 
-const spookyCycle = document.querySelector('.spookyCycle');
+//This event listener causes the image to pulse and shake on load of the window and when you double click it changes
+const spookyCyclePhoto = document.querySelector('.spookyCycle');
 
-spookyCycle.addEventListener('load', (event) => {
+spookyCyclePhoto.addEventListener('load', (event) => {
 	TweenMax.to(event.target, 0.01, { x: '+=5', yoyo: true, repeat: -1 });
 	TweenMax.to(event.target, 0.01, { x: '-=5', yoyo: true, repeat: -1 });
-	spookyCycle.style.borderMargin = '30px';
+	spookyCyclePhoto.style.borderMargin = '30px';
 });
 
-spookyCycle.addEventListener('dblclick', (event) => {
-	spookyCycle.src = 'img/la-light.jpg';
+spookyCyclePhoto.addEventListener('dblclick', (event) => {
+	spookyCyclePhoto.src = 'img/still-clown.jpg';
 });
 
-//Sign Me Up Buttons Near Footer to Choose Destinations
+//This banner photo at the bottom changes when you try and drag it to a picture of a road to nowhere
+const noChoicePhoto = document.querySelector('.noChoiceImg');
+
+noChoicePhoto.addEventListener('drag', (event) => {
+	noChoicePhoto.src = 'img/nowhere-road.jpg';
+});
+
+//*** Near the Footer Sign Up Buttons
+
+//Sign Me Up Buttons Near Footer to Choose Destinations that wiggle up and down using greensock Tween max then change background to black
 const signMeUpBtn = document.querySelectorAll('.content-pick .btn');
 
 signMeUpBtn.forEach((SignUp) => {
@@ -111,5 +132,14 @@ signMeUpBtn.forEach((SignUp) => {
 			}),
 			y: 10
 		});
+	});
+});
+
+//**Stopping propogation on a button
+signMeUpBtn.forEach((SignUp) => {
+	SignUp.addEventListener('contextmenu', (event) => {
+		SignUp.style.backgroundColor = 'black';
+		SignUp.style.transitionDuration = '.5s';
+		event.stopPropagation(event);
 	});
 });
