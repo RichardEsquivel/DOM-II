@@ -3,10 +3,10 @@
 // Logo-Heading animation to increase font size with mouseover event listener and then revert
 //back to normal state with mouse leave
 
-const darkStyle = document.querySelector('.container');
+const darkStyle = document.querySelector('body');
 
 darkStyle.addEventListener('contextmenu', (event) => {
-	darkStyle.style.backgroundImage = 'img/weird-static.png';
+	darkStyle.style.backgroundColor = '  #990000';
 	darkStyle.style.transitionDuration = '2s';
 });
 
