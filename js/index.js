@@ -2,6 +2,14 @@
 
 // Logo-Heading animation to increase font size with mouseover event listener and then revert
 //back to normal state with mouse leave
+
+const darkStyle = document.querySelector('.container');
+
+darkStyle.addEventListener('contextmenu', (event) => {
+	darkStyle.style.backgroundImage = 'img/weird-static.png';
+	darkStyle.style.transitionDuration = '2s';
+});
+
 const buttonFunBus = document.querySelector('.logo-heading');
 
 buttonFunBus.addEventListener('mouseover', (event) => {
@@ -64,6 +72,18 @@ spookyPhoto.addEventListener('click', (event) => {
 
 spookyPhoto.addEventListener('mouseout', (event) => {
 	spookyPhoto.src = 'img/spooky-woods.jpg';
+});
+
+const spookyCycle = document.querySelector('.spookyCycle');
+
+spookyCycle.addEventListener('load', (event) => {
+	TweenMax.to(event.target, 0.01, { x: '+=5', yoyo: true, repeat: -1 });
+	TweenMax.to(event.target, 0.01, { x: '-=5', yoyo: true, repeat: -1 });
+	spookyCycle.style.borderMargin = '30px';
+});
+
+spookyCycle.addEventListener('dblclick', (event) => {
+	spookyCycle.src = 'img/la-light.jpg';
 });
 
 //Sign Me Up Buttons Near Footer to Choose Destinations
