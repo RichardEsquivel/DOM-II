@@ -11,6 +11,10 @@
 
   <script src="js/index.js" async></script>
 
+<!-- TweenMax javascript library to utilize Greensock animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -22,34 +26,37 @@
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
       <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Blog</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="index.html">About Us</a>
+        <a class="nav-link" href="index.html">Blog</a>
+        <a class="nav-link" href="index.html">Contact</a>
       </nav>
     </div>
   </header>
      
   <div class="container home">
     <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
-      <h2>Welcome To Fun Bus!</h2>
+      <img class="funBusHeader" src="img/fun-bus.jpg" alt="bus in the sand">
+      <h2>Welcome To A Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
     <section class="content-section">
       <div class="text-content">
-        <h2>Let's Go!</h2>
-        <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
-        <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
+        <h2>A Place to Escape!</h2>
+        <p>A place you would never want to leave...</p> 
+        <p>So why even try?</p>
       </div>
       <div class="img-content">
-        <img src="img/adventure.jpg" alt="Let's go on an adventure!">
+        <img class="scaryImage" src="img/adventure.jpg" alt="Let's go on an adventure!">
+
       </div>
     </section>
     <section class="content-section inverse-content">
-      <div class="img-content">
-          <img src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
-      </div>
+      <div class="img-content-cycle">
+      <img class= "spookyCycle" src="img/fun.jpg" alt="spooky">
+         
+          </div>
+        
       <div class="text-content">
         <h2>Adventure Awaits</h2>
         <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
@@ -60,7 +67,7 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-      <img src="img/destination.jpg" alt="Second slide">
+      <img class="noChoiceImg" src="img/destination.jpg" alt="Second slide">
     </section>
     <section class="content-pick">
 
